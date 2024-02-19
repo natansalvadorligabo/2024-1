@@ -11,9 +11,11 @@ public interface UserDao {
 
     boolean deleteUser(User user);
 
-    boolean updateUser(User oldUser, User newUser);
+    boolean updateUser(User user);
 
     boolean login(String username, String password);
 
     boolean recoverPassword(String username, String email);
+
+    User findByUsername(String username);
 }

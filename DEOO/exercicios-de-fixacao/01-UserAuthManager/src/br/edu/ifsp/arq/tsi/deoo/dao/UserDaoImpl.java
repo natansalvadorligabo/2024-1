@@ -49,10 +49,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateUser(User oldUser, User newUser) {
-        int index = dataset.indexOf(oldUser);
+    public boolean updateUser(User user) {
+        int index = dataset.indexOf(user);
         if (index != -1) {
-            dataset.set(index, newUser);
+            dataset.set(index, user);
             return true;
         }
         return false;
@@ -97,12 +97,13 @@ public class UserDaoImpl implements UserDao {
         return false;
     }
 
-    // private void updatePassword(String username, String newPassword) {
-    //     for (User user : dataset) {
-    //         if (username.equals(user.getUsername())) {
-    //             user.setPassword(newPassword);
-    //             return;
-    //         }
-    //     }
-    // }
+    @Override
+    public User findByUsername(String username) {
+        for (User u : dataset){
+            if(u.getUsername().equals(username)){
+                return u;
+            }
+        }
+        return null;
+    }
 }
