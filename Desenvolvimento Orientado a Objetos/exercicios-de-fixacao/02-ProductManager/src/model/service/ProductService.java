@@ -18,6 +18,14 @@ public class ProductService {
         return false;
     }
 
+    public boolean remove(int id){
+        if(id > 0){
+            dao.delete(id);
+            return true;
+        }
+        return false;
+    }
+
     public ProductService() {
         dao = ProductDaoImpl.getInstance();
     }

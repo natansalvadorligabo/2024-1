@@ -40,7 +40,6 @@ public class ProductDaoImpl implements ProductDao {
     public boolean insert(Product product) {
         if (product != null) {
             if (findById(product.getId()) == null) {
-                product.setId(productList.size() + 1);
                 productList.add(product);
                 return true;
             }

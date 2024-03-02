@@ -16,28 +16,30 @@ public class ProductController {
     }
 
     public boolean add(ProductDto productDto){
-        var movie = productDto.toDomain();
-        return service.save(movie);
+        var product = productDto.toDomain();
+
+        return service.save(product);
     }
 
     public boolean delete(int id) {
         for (Product product : service.getAllProducts()) {
             if (product.getId() == id) {
-                service.getAllProducts().remove(product);
+                service.remove(id);
                 return true;
             }
         }
         return false;
     }
 
-    public boolean update(int id, ProductDto product) {
-        int index = 0;
+    public boolean update(int id, ProductDto updatedProduct) {
         for(Product p : service.getAllProducts()){
             if (p.getId() == id){
-                service.getAllProducts().set(index, p);
+                p.setName(updatedProduct.getName());
+                p.setDescription(updatedProduct.getDescription());
+                p.setPrice(updatedProduct.getPrice());
+                p.setStockQuantity(updatedProduct.getStockQuantity());
                 return true;
             }
-            index++;
         }
         return false;
     }

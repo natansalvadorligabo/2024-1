@@ -1,6 +1,8 @@
 package model.entity;
 
 public class Product {
+
+    private static int nextId = 0;
     
     private int id;
     private String name;
@@ -9,7 +11,7 @@ public class Product {
     private int stockQuantity;
     
     public Product(String name, String description, double price, int stockQuantity) {
-        this.id = 0;
+        this.id = ++nextId;
         this.name = name;
         this.description = description;
         this.price = price;

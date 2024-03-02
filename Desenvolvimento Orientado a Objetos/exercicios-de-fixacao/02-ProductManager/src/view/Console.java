@@ -82,13 +82,16 @@ public class Console {
         if (productController.delete(productId)) {
             System.out.println("Produto removido com sucesso!");
         } else {
-            System.out.println("Produto não encontrado ou não removido.");
+            System.out.println("Produto não encontrado.");
         }
     }
 
     private void updateProduct() {
+        listProducts();
+
         System.out.print("Digite o ID do produto a ser atualizado: ");
         int productId = scanner.nextInt();
+        scanner.nextLine();
 
         if (productController.findById(productId)) {
             System.out.print("Novo nome do produto: ");
@@ -123,11 +126,10 @@ public class Console {
         } else {
             for (ProductDto product : productController.getAllProducts()) {
                 System.out.printf(
-                        "\tProduto %d: %s\n\tDescrição: %s\n\tPreço: R$ %.2f\n\tQuantidade em estoque: %d\n\n",
+                        "\tProduto %d: %s\n\tDescrição: %s\n\tPreço: R$ %.2f\n\tQuantidade em estoque: %d unidades\n\n",
                         product.getId(), product.getName(), product.getDescription(), product.getPrice(),
                         product.getStockQuantity());
             }
         }
     }
-
 }
