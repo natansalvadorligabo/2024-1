@@ -1,0 +1,57 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #212529;
+    --border-color: #666;
+    --font-color: #f1f5f9;
+    --primary-color: #4dff91;
+    --error-color: #ff0043;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: "Ubuntu", sans-serif;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+section h1 {
+	padding-bottom: 1rem;
+}
+
+section input {
+	padding: .25rem 1rem;
+	border-radius: .25rem;
+	border-color: var(--border-color);
+}
+
+fieldset {
+	padding: 1rem;
+	margin-top: 1rem;
+	width: 25rem;
+}
+
+form {
+	margin-top: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: .25rem;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    transition: .15s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+}
