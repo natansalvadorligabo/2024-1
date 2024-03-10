@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrícula - Cursos de Extensão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Matrícula - Cursos de Extensão</h1>
+        <hr />
+
+        <form action="enroll" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name" required><br>
+            <label for="emails">E-mails (separe por vírgulas):</label>
+            <input type="text" name="emails" id="emails" required><br>
+
+            <fieldset>
+                <legend>Cursos de extensão:</legend>
+                <input type="checkbox" name="options" id="bootstrap" value="Bootstrap"> Bootstrap<br>
+                <input type="checkbox" name="options" id="animacoesCss3" value="Animações em CSS 3"> Animações em CSS 3<br>
+                <input type="checkbox" name="options" id="designPatterns" value="Design Patterns"> Design Patterns<br>
+            </fieldset>
+            <br>
+            <button type="submit">Matricular</button>
+        </form>
+    </div>
+</body>
+</html>
